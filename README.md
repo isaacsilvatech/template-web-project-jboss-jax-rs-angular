@@ -1,4 +1,4 @@
-# WP-Template01
+# WP-Template
 
 Projeto template para novos projetos web service
 
