@@ -1,0 +1,44 @@
+<cmp-grid-lst [formGroup]="form">
+  <cmp-grid-pesq-lst>
+    <div class="flex align-items-end gap-2">
+      <div class=" field w-full mb-0">
+        <label class="font-medium">Apelido</label>
+        <input pInputText formControlName="apelido" class="w-full" autocomplete="off" cmpProximoCampo="button-pesq" />
+      </div>
+      <div>
+        <button id="button-pesq" pButton [icon]="loading ? 'pi pi-spin pi-spinner' : 'pi pi-search'"
+          [disabled]="loading" (click)="pesquisar()" label="Pesquisar" class="font-medium"></button>
+      </div>
+    </div>
+  </cmp-grid-pesq-lst>
+  <cmp-grid-table-lst>
+    <p-table [value]="lista" selectionMode="single" [(selection)]="selectedItem" dataKey="0" sortMode="multiple"
+      [resizableColumns]="true" [rowHover]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pResizableColumn pSortableColumn="0" style="width: 100px">
+            Código <p-sortIcon field="0"></p-sortIcon>
+          </th>
+          <th pResizableColumn pSortableColumn="1">
+            Apelido <p-sortIcon field="1"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-entity>
+        <tr [pSelectableRow]="entity" (dblclick)="ref.close(entity[0])" >
+          <td>{{ entity[0] }}</td>
+          <td>{{ entity[1] }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </cmp-grid-table-lst>
+  <cmp-grid-footer-lst>
+    <div class="flex align-items-center justify-content-between ">
+      <span class="font-medium font-italic">Total de registros encontrados: {{lista?.length}}</span>
+      <div class="flex align-items-center gap-4">
+        <cmp-paginator formControlName="paginator"></cmp-paginator>
+        <button pButton label="Selecionar" (click)="selecionar()"></button>
+      </div>
+    </div>
+  </cmp-grid-footer-lst>
+</cmp-grid-lst>

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="login-img">
+            <img class="image" src="assets/imgs/login/login.png">
+        </div>
+        <div class="login-form">
+            <div class="sistema">
+                <i class="{{icon}}"></i> {{title}}
+            </div>
+            <h2 class="form-title">Login</h2>
+            <span class="form-subtitle">Seja bem vindo(a)!</span>
+            <form class="form" [formGroup]="form">
+                <div class="form-field">
+                    <label for="input-matricula">Úsuario</label>
+                    <p-inputNumber styleClass="w-full  " class="w-full" [useGrouping]="false"
+                        formControlName="matricula" cmpProximoCampo="senha"></p-inputNumber>
+                    <span *ngIf="form.controls.matricula.invalid && form.controls.matricula.touched"
+                        class="text-red-500">*Preencha o campo 'Úsuario'!</span>
+                </div>
+                <div class="form-field">
+                    <label for="input-senha">Senha</label>
+                    <p-password inputId="senha" styleClass="w-full " class="w-full" inputStyleClass="w-full"
+                        [feedback]="false" [toggleMask]="true" formControlName="senha"
+                        cmpProximoCampo="btn"></p-password>
+                    <span *ngIf="form.controls.senha.invalid && form.controls.senha.touched"
+                        class="text-red-500">*Preencha o campo 'Senha'!</span>
+                </div>
+                <div class="form-action">
+                    <button id="btn" pButton class="w-4" type="button" label="Entrar" (click)="login()"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

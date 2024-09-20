@@ -1,0 +1,16 @@
+.template {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+}
+
+cmp-sidebar {
+    grid-column: 1/2;
+}
+
+cmp-main {
+    grid-column: 2/3;
+    min-width: 100%;
+}

@@ -1,0 +1,146 @@
+* {
+    --animate-duration: 350ms !important
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-800);
+    height: 100vh;
+    width: 200px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    min-height: 35px;
+    background-color: var(--primary-900);
+    padding: 5px;
+    color: white;
+    overflow: hidden;
+}
+
+.sidebar-content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 225ms all;
+    padding-top: 0 !important;
+}
+
+.nav-group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-group {
+    display: block;
+    width: 100%;
+    color: var(--blue-100);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    padding-left: 0.5rem;
+    text-align: start;
+}
+
+.nav-group-container .nav-item {
+    overflow: hidden;
+    margin-bottom: 0.7rem;
+}
+
+.nav-item {
+    color: white;
+    min-width: 35px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    transition: all 225ms;
+    font-weight: 600;
+}
+
+.nav-item--btn {
+    width: 35px;
+}
+
+.nav-item:hover {
+    background-color: white;
+    color: var(--blue-900);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item__label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+.nav-item i {
+    display: block;
+    text-align: center;
+    width: 35px;
+    min-width: 35px;
+}
+
+.nav-item--activeted {
+    background-color: var(--primary-700);
+}
+
+.nav-item--translate:hover {
+    transform: translateY(-5px);
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divider {
+    width: 90%;
+    height: 2px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: var(--primary-700);
+    transition: 225ms all;
+}
+
+
+.sistem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.user-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    font-weight: 600;
+    height: 100%;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

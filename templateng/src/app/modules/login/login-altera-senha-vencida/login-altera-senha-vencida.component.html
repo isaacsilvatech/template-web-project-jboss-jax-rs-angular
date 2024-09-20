@@ -1,0 +1,32 @@
+<h2 class="text-xl  mt-0 mb-2">Altere sua senha:</h2>
+
+<form [formGroup]="form">
+    <div class="field">
+        <label class="input-usuario">Úsuario</label>
+        <p-inputNumber inputId="input-usuario" [cmpControleEnabled]="false" formControlName="matricula" class="w-full" styleClass="w-full" inputStyleClass="w-full"></p-inputNumber>
+    </div>
+    <div class="field">
+        <label class="input-senha">Nova senha</label>
+        <p-password inputId="input-senha-nova" styleClass="w-full " class="w-full" inputStyleClass="w-full"
+            formControlName="senhaNova" [toggleMask]="true" [feedback]="false" cmpProximoCampo="input-senha-nova-repetida"></p-password>
+        <small class="text-red-500" *ngIf="form.controls.senhaNova.invalid && form.controls.senhaNova.touched">Preencha
+            o
+            campo 'Nova
+            senha'!</small>
+    </div>
+    <div class="field">
+        <label class="input-senha-nova-repetida">Repetir nova senha</label>
+        <p-password inputId="input-senha-nova-repetida" styleClass="w-full " class="w-full" inputStyleClass="w-full"
+            formControlName="senhaNovaRepetida" [toggleMask]="true" [feedback]="false" cmpProximoCampo="btn-alterar"></p-password>
+
+        <small class="text-red-500 block "
+            *ngIf="form.controls.senhaNovaRepetida.invalid && form.controls.senhaNovaRepetida.touched">*Preencha
+            o campo 'Repetir nova senha'!</small>
+        <small class="text-red-500 block"
+            *ngIf="form.controls.senhaNovaRepetida.value != form.controls.senhaNova.value && form.controls.senhaNovaRepetida.touched">*As
+            senhas não são iguais!</small>
+    </div>
+    <div class="flex justify-content-end">
+        <button id="btn-alterar" pButton type="button" class="w-full" label="Alterar" (click)="alterar()"></button>
+    </div>
+</form>
